@@ -1,0 +1,76 @@
+[
+  {
+    "id": "bdb5e25e0c094091a598b00a38a9828c",
+    "name": "Local PC (this computer) \u2014 DJDecs_ROG",
+    "worker_version": "0.6.0",
+    "transfer_parallel_limit": 4,
+    "transfer_chunk_mb": 4,
+    "host": "DJDecs_ROG",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "is_local_dashboard": false,
+    "cpu": 11.8,
+    "memory": 60.6,
+    "disk_free_gb": 149.8,
+    "disk_total_gb": 927.9,
+    "disk_used_gb": 778.1,
+    "disk_percent": 83.9,
+    "recordings_root": "C:\\Users\\decla\\Documents\\###TEst For INjest\\VIC_v0_6_0_Windows_EXPERIMENTAL\\VIC_v0_6_0_Windows_EXPERIMENTAL\\worker_recordings",
+    "ffmpeg": "",
+    "video_encoder": "CPU x264",
+    "video_encoder_details": "Automatic fell back to CPU x264. NVIDIA NVENC: [h264_nvenc @ 000001596cd948c0] Driver does not support the required nvenc API version. Required: 13.1 Found: 13.0 [h264_nvenc @ 000001596cd948c0] The minimum required Nvidia driver for nvenc is 610.00 or newer [vost#0:0/h264_nvenc @ 000001 | AMD AMF: [AMF @ 000001b5cb7fef40] DLL amfrt64.dll failed to open [h264_amf @ 000001b5cb78dc80] Failed to create hardware device context (AMF) : Unknown error occurred [vost#0:0/h264_amf @ 000001b5cb78d940] [enc:h264_amf @ 000001b5c978c9c0] Error whi | Intel Quick Sync: [h264_qsv @ 000001506199f480] Error creating a MFX session: -9. [h264_qsv @ 000001506199f480] The current mfx implementation is not supported, try next mfx implementation. [h264_qsv @ 000001506199f480] Error creating a MFX session: -9. [vos",
+    "ffmpeg_selection_details": "Selected C:\\Users\\decla\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.exe (WinGet package) because no installed FFmpeg passed a hardware runtime test, so the newest available FFmpeg was selected with CPU fallback. Working hardware encoders: none. Checked 1 FFmpeg installation(s).",
+    "ffmpeg_selection_mode": "auto_compatible",
+    "ffmpeg_last_selected_path": "C:\\Users\\decla\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.exe",
+    "ffmpeg_candidates": [
+      {
+        "path": "C:\\Users\\decla\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.exe",
+        "origin": "WinGet package",
+        "explicit": false,
+        "version": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+        "version_key": [
+          8,
+          1,
+          2,
+          0
+        ],
+        "working": [],
+        "listed": [
+          "nvenc",
+          "amf",
+          "qsv"
+        ],
+        "probes": {
+          "nvenc": {
+            "available": false,
+            "listed": true,
+            "reason": "[h264_nvenc @ 000001596cd948c0] Driver does not support the required nvenc API version. Required: 13.1 Found: 13.0 [h264_nvenc @ 000001596cd948c0] The minimum required Nvidia driver for nvenc is 610.00 or newer [vost#0:0/h264_nvenc @ 000001596ededac0] [enc:h264_nvenc @ 000001596cd92100] Error while opening encoder - maybe incorrect parameters such as bit_rate, rate, width or height. [vf#0:0 @ 000001596ee08900] Error sending frames to consumers: Function not implemented [vf#0:0 @ 000001596ee08900] Task finished with error code: -40 (Function not implemented) [vf#0:0 @ 000001596ee08900] Terminating thread with return code -40 (Function not implemented) [vost#0:0/h264_nvenc @ 000001596ededac0] [enc:h264_nvenc @ 000001596cd92100] Could not open encoder before EOF [vost#0:0/h264_nvenc @ 000001596ededac0] Task finished with error code: -22 (Invalid argument) [vost#0:0/h264_nvenc @ 000001596ededac0] Terminating thread with return code -22 (Invalid argument) [out#0/null @ 000001596cd69900] Nothing was written into output file, because at least one of its streams received no packets.",
+            "command": "C:\\Users\\decla\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.exe -hide_banner -loglevel error -f lavfi -i testsrc2=size=640x360:rate=30 -frames:v 30 -an -vf format=nv12 -c:v h264_nvenc -preset p4 -cq 23 -b:v 0 -f null -"
+          },
+          "amf": {
+            "available": false,
+            "listed": true,
+            "reason": "[AMF @ 000001b5cb7fef40] DLL amfrt64.dll failed to open [h264_amf @ 000001b5cb78dc80] Failed to create hardware device context (AMF) : Unknown error occurred [vost#0:0/h264_amf @ 000001b5cb78d940] [enc:h264_amf @ 000001b5c978c9c0] Error while opening encoder - maybe incorrect parameters such as bit_rate, rate, width or height. [vf#0:0 @ 000001b5c9791180] Error sending frames to consumers: Unknown error occurred [vf#0:0 @ 000001b5c9791180] Task finished with error code: -1313558101 (Unknown error occurred) [vf#0:0 @ 000001b5c9791180] Terminating thread with return code -1313558101 (Unknown error occurred) [vost#0:0/h264_amf @ 000001b5cb78d940] [enc:h264_amf @ 000001b5c978c9c0] Could not open encoder before EOF [vost#0:0/h264_amf @ 000001b5cb78d940] Task finished with error code: -22 (Invalid argument) [vost#0:0/h264_amf @ 000001b5cb78d940] Terminating thread with return code -22 (Invalid argument) [out#0/null @ 000001b5c97648c0] Nothing was written into output file, because at least one of its streams received no packets.",
+            "command": "C:\\Users\\decla\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.exe -hide_banner -loglevel error -f lavfi -i testsrc2=size=640x360:rate=30 -frames:v 30 -an -vf format=nv12 -c:v h264_amf -quality speed -rc cqp -qp_i 23 -qp_p 23 -f null -"
+          },
+          "qsv": {
+            "available": false,
+            "listed": true,
+            "reason": "[h264_qsv @ 000001506199f480] Error creating a MFX session: -9. [h264_qsv @ 000001506199f480] The current mfx implementation is not supported, try next mfx implementation. [h264_qsv @ 000001506199f480] Error creating a MFX session: -9. [vost#0:0/h264_qsv @ 000001506399cac0] [enc:h264_qsv @ 000001506199de00] Error while opening encoder - maybe incorrect parameters such as bit_rate, rate, width or height. [vf#0:0 @ 00000150619a00c0] Error sending frames to consumers: Unknown error occurred [vf#0:0 @ 00000150619a00c0] Task finished with error code: -1313558101 (Unknown error occurred) [vf#0:0 @ 00000150619a00c0] Terminating thread with return code -1313558101 (Unknown error occurred) [vost#0:0/h264_qsv @ 000001506399cac0] [enc:h264_qsv @ 000001506199de00] Could not open encoder before EOF [vost#0:0/h264_qsv @ 000001506399cac0] Task finished with error code: -22 (Invalid argument) [vost#0:0/h264_qsv @ 000001506399cac0] Terminating thread with return code -22 (Invalid argument) [out#0/null @ 0000015061973980] Nothing was written into output file, because at least one of its streams received no packets.",
+            "command": "C:\\Users\\decla\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.exe -hide_banner -loglevel error -f lavfi -i testsrc2=size=640x360:rate=30 -frames:v 30 -an -vf format=nv12 -c:v h264_qsv -preset veryfast -global_quality 23 -f null -"
+          }
+        },
+        "score": 90
+      }
+    ],
+    "gpu_devices": [
+      "NVIDIA NVIDIA GeForce RTX 4060 Ti, 596.36",
+      "Meta Virtual Monitor | driver 17.12.55.198",
+      "NVIDIA GeForce RTX 4060 Ti | driver 32.0.15.9636"
+    ],
+    "devices": {},
+    "recordings": [],
+    "recycle_bin": [],
+    "last_seen": "2026-08-02 14:17:22",
+    "last_seen_ts": 1785676642.345547
+  }
+]

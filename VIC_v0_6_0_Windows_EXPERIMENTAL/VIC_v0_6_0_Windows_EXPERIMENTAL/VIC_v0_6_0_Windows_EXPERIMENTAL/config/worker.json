@@ -1,0 +1,19 @@
+{
+  "dashboard_url": "http://192.168.0.42:8765",
+  "cluster_token": "c6BJxP-slFdA218d27FgPSKch79CDrcT",
+  "worker_id": "bdb5e25e0c094091a598b00a38a9828c",
+  "worker_name": "",
+  "poll_seconds": 0.25,
+  "recordings_dir": "worker_recordings",
+  "ffmpeg_path": "",
+  "full_status_seconds": 10,
+  "auto_discover": true,
+  "dashboard_port": 8765,
+  "discovery_port": 8766,
+  "worker_machine": "DJDecs_ROG",
+  "ffmpeg_selection_mode": "auto_compatible",
+  "ffmpeg_last_selected_path": "C:\\Users\\decla\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.exe",
+  "ffmpeg_last_selected_version": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+  "transfer_parallel_limit": 4,
+  "dashboard_last_discovered": "2026-08-02 14:17:18"
+}

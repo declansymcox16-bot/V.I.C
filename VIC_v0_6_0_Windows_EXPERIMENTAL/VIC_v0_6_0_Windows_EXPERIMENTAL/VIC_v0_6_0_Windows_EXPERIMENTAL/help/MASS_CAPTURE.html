@@ -1,0 +1,13 @@
+<!doctype html><html><head><meta charset="utf-8"><title>VIC Mass Capture</title><style>body{font-family:Segoe UI,Arial;max-width:950px;margin:35px auto;line-height:1.55;padding:0 20px}code{background:#eee;padding:2px 5px}</style></head><body>
+<h1>Capture Everything</h1>
+<p>This page loads devices from one worker and creates a separate source for every checked item.</p>
+<h2>Categories</h2><ul><li>Monitors: separate MKV screen recordings.</li><li>Microphones/audio inputs: separate MKA recordings.</li><li>Speaker/headphone outputs: separate WAV recordings using WASAPI loopback.</li><li>Cameras/capture cards: separate MKV recordings.</li></ul>
+<h2>Safe first test</h2><ol><li>Choose Local PC.</li><li>Load devices.</li><li>Leave one monitor and one speaker checked.</li><li>Choose Create selected sources.</li><li>Test each source before starting all.</li></ol>
+<p><b>Create and start selected</b> can start many jobs at once. CPU, disk and USB usage can become high.</p><section><h2>Shared speaker piggybacking</h2><p>VIC opens each speaker or headphone output once and shares that audio with all screen sources, standalone speaker recordings, live meters and mass-capture jobs using it. This lets several VIC sources piggyback on audio that is already playing without fighting each other for the Windows device.</p><p>If Windows still reports 0x8889000A when no other VIC speaker source is running, another application is holding the device in exclusive mode.</p></section>
+<section>
+<h2>Test All, Start All and Stop All</h2>
+<p>The Dashboard has three bulk buttons. Test All sends a short test to every source, Start All starts all inactive sources, and Stop All stops every active test or recording.</p>
+<h2>Physical monitor size</h2>
+<p>VIC now asks Windows for the active physical signal mode instead of the DPI-scaled desktop size. A 4096×2160 display at 150% scaling should therefore be listed and captured as 4096×2160.</p>
+</section>
+</body></html>
