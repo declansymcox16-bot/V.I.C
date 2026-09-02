@@ -1,0 +1,13 @@
+name: VIC Source Archive Restore
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "VIC archive restore workflow is staged and waiting for the archive chunks."
