@@ -1,0 +1,10 @@
+FFMPEG INSTALLATION
+===================
+
+VIC uses FFmpeg to record RTSP streams.
+
+After installing FFmpeg, open a NEW Command Prompt and run:
+
+ffmpeg -version
+
+If the version information appears, run CHECK_SYSTEM.bat again.
