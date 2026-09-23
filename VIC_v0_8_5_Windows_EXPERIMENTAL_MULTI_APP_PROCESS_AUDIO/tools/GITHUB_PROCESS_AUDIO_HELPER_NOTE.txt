@@ -1,0 +1,13 @@
+GitHub source archive note
+==========================
+
+The packaged VIC Windows ZIP included a prebuilt tools\vic_process_audio.exe.
+
+The public Git source archive keeps the reproducible Go source instead of
+committing the generated executable. To rebuild the helper on Windows:
+
+1. Install Go from https://go.dev/dl/
+2. Open this tools folder.
+3. Run BUILD_PROCESS_AUDIO_HELPER.bat
+
+The helper is built from vic_process_audio.go for Windows x64.

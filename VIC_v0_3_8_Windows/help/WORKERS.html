@@ -1,0 +1,10 @@
+<!doctype html><html><head><meta charset="utf-8"><title>VIC Worker Help</title><style>body{font-family:Segoe UI,Arial;max-width:950px;margin:35px auto;line-height:1.55;padding:0 20px}code{background:#eee;padding:3px 6px}</style></head><body>
+<h1>Worker PCs</h1><p>A worker is a computer that performs the actual ingest or recording task. Sources can be assigned manually or automatically.</p>
+<p>The dashboard sends pending jobs to the selected worker. The worker starts FFmpeg or yt-dlp, reports status and output paths, and receives stop commands.</p>
+<p>A local file path must exist on the selected worker. For multiple PCs, use a shared path such as <code>\\SERVER\Media\clip.mp4</code> or place the file on that worker.</p>
+
+<section>
+<h2>Clearing old worker entries</h2>
+<p>The Workers page can forget one offline worker or clear every offline worker entry. A worker automatically appears again when its START_WORKER.bat reconnects.</p>
+</section>
+</body></html>

@@ -1,0 +1,6 @@
+{
+  "port": 8765,
+  "recordings_dir": "recordings",
+  "ffmpeg_path": "",
+  "open_browser_on_start": true
+}

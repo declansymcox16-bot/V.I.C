@@ -1,0 +1,59 @@
+<!doctype html><html><head><meta charset="utf-8"><title>VIC Live and Recordings</title><style>body{font-family:Segoe UI,Arial;max-width:950px;margin:35px auto;line-height:1.55;padding:0 20px}code{background:#eee;padding:3px 6px}</style></head><body>
+<h1>Live view, audio meter and recordings</h1>
+<h2>Live tab</h2><p>Start a source, open <b>Live</b>, then choose <b>Open live tab</b>. VIC displays a refreshed JPEG preview, job status, output path and an audio meter. It is intended for monitoring rather than zero-delay playback.</p>
+<h2>Audio meter</h2><p>The meter is available when a screen, camera or audio source has a selected audio input. For normal speaker sound, Windows usually needs <b>Stereo Mix</b> or a loopback/virtual-audio input. A stationary empty bar can mean silence, the wrong device or no meter support for that source type.</p>
+<h2>Recordings tab</h2><p>The Recordings tab lists files reported by every worker. The full path tells you exactly where each file is stored. Press <b>Open folder on worker</b> to open Explorer on that worker PC.</p>
+<h2>Remote workers</h2><p>A remote worker's files remain on that PC. Use a shared path such as <code>\\SERVER\Recordings</code> when all computers need access to the same storage.</p>
+
+<section><h2>Screen audio dropdown</h2>
+<p>After selecting a worker, press <b>Load worker devices</b>. The screen audio dropdown includes microphones/audio inputs and speaker/headphone outputs. Microphones are added to the screen MKV. Speaker loopback is stored as a matching companion WAV file beside the screen recording and drives the live volume meter.</p></section>
+<section><h2>Shared speaker piggybacking</h2><p>VIC opens each speaker or headphone output once and shares that audio with all screen sources, standalone speaker recordings, live meters and mass-capture jobs using it. This lets several VIC sources piggyback on audio that is already playing without fighting each other for the Windows device.</p><p>If Windows still reports 0x8889000A when no other VIC speaker source is running, another application is holding the device in exclusive mode.</p></section>
+<section>
+<h2>Faster meters and Live All</h2>
+<p>Audio levels now report about four times per second while a worker is online. The Dashboard has a larger Audio level column. Open <b>Live All</b> to see all latest source previews, states and audio meters together. Individual Live pages remain available.</p>
+</section>
+
+<section>
+<h2>Live All control room</h2>
+<p>Live All now has Test All, Start All and Stop All beside Full screen. Every card has its own Test, Start and Stop buttons. A pulsing green corner dot means recording, amber means testing or changing state, red means failed, and grey means inactive. The green border glow makes active recordings easy to spot.</p>
+</section>
+
+<section>
+<h2>Clearing old Live cards</h2>
+<p>Deleting a Dashboard source now removes its inactive Live cards, job history and cached previews automatically. Use Clear source history for one source, Clear inactive for all stopped/finished/failed items, or Clear deleted sources for older orphaned entries. These history controls do not delete saved recordings.</p>
+<h2>Permanent recording deletion</h2>
+<p>The Recordings tab has red controls for deleting one real media file, every recording on one worker, or every recording on all online workers. These file deletions cannot be undone.</p>
+</section>
+
+<section>
+<h2>Moving recordings between computers</h2>
+<p>On the Recordings tab, choose another online worker and select Copy to worker or Move to worker. Files on a remote worker also have Move to Main PC. A move keeps the original until the destination PC downloads the whole file and verifies its exact size and SHA-256 hash.</p>
+<p>Transferred files are placed inside the destination recording folder under <code>Transferred from &lt;source worker&gt;</code>. The File transfers table shows progress and the final path. A failed transfer leaves the original untouched.</p>
+</section>
+
+<section>
+<h2>Mass copy and mass move</h2>
+<p>On the Recordings page, tick individual files or use the checkbox in the table heading to select every file on one worker. You can Copy Selected, Move Selected, Copy All, Move All, Move All to Main PC, or move every remote worker's files to Main PC.</p>
+<p>Each file is transferred and verified separately. Workers process one transfer at a time, duplicate queued paths are skipped, and VIC refuses to move a file that is still growing because it may still be recording.</p>
+</section>
+
+<section>
+<h2>Queued upload troubleshooting</h2>
+<p>In v0.4.3, a source worker immediately changes a transfer from <b>Queued upload</b> to <b>Worker queue</b>, even when another file is ahead of it. Both source and destination must show VIC 0.4.3. Use Retry now after restarting a worker, or Cancel to remove the queue item while keeping the original recording.</p>
+</section>
+
+<section>
+<h2>Preview and Recording Health</h2>
+<p>Preview runs continuously without creating a recording file. Press Start while Preview is running and VIC automatically stops Preview, waits for the device, and begins recording.</p>
+<p>The Recording Health tab shows actual/requested FPS, dropped frames, bitrate, file size, duration, storage per hour, encoder and processing speed. New screen sources use display refresh capped at 60 FPS by default, and VIC automatically selects a working GPU encoder where available.</p>
+</section>
+
+<section>
+<h2>Multiple audio devices and setup meters</h2>
+<p>Screen sources can contain any number of microphone/input and speaker/loopback devices. Each Add/Edit row has a live meter that monitors only and saves nothing. Inputs become separate MKV audio tracks; speaker outputs become separate companion WAV files.</p>
+</section>
+<section>
+<h2>Live transfer progress</h2>
+<p>The file-transfer queue refreshes every second and shows live percentage, bytes, speed and estimated time remaining without Retry or a page refresh.</p>
+</section>
+</body></html>

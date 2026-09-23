@@ -24,3 +24,22 @@ QUICK START
 
 Dashboard address:
 http://127.0.0.1:8765
+
+ADDING ANOTHER WORKER PC
+------------------------
+1. Copy the extracted VIC folder to the other PC.
+2. Open config\worker.json in Notepad.
+3. Change dashboard_url to the dashboard PC IP, for example:
+   http://192.168.1.100:8765
+4. Double-click START_WORKER.bat
+
+IMPORTANT
+---------
+This is the foundation release.
+
+In this version:
+- RTSP recording runs on the dashboard PC.
+- Worker PCs can register and appear online.
+- Remote workers do not yet execute recording jobs.
+
+The next development step is remote worker recording and automatic assignment.

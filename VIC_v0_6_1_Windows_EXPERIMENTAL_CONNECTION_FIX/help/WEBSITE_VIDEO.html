@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><title>VIC Website Video Help</title><style>body{font-family:Segoe UI,Arial;max-width:950px;margin:35px auto;line-height:1.55;padding:0 20px}code{background:#eee;padding:3px 6px}</style></head><body>
+<h1>Website video and livestreams</h1><p>This source type uses yt-dlp rather than passing the webpage directly to FFmpeg. It supports YouTube and many other websites, subject to each site's current support and permissions.</p>
+<p>Private, age-restricted or account-only content may require cookies. This prototype does not include cookie-import controls yet.</p>
+<p>Only ingest media you are entitled to access and record.</p>
+
+<section>
+<h2>Single, playlist and upcoming-live modes</h2>
+<p><b>Single</b> records one video or livestream page. <b>Playlist</b> stores every item separately and remembers completed item IDs so later starts skip duplicates. <b>Upcoming scheduled live event</b> keeps the worker waiting and checking until the event begins; Stop cancels the waiting job.</p>
+<p>Use Test before Start. An upcoming-event test checks metadata without waiting for the event to begin.</p>
+</section>
+
+<section>
+<h2>Private, age-verified and signed-in content</h2>
+<p>VIC does not store your username or password. Choose <b>Automatic browser fallback</b> to try the source signed out first and use the selected worker PC's logged-in browser only when yt-dlp reports a login, age, private-content, members-only or authentication error.</p>
+<p><b>Always use browser login</b> is useful for private playlists where anonymous playlist processing may otherwise skip inaccessible entries. A cookies.txt file can be selected instead; its path must exist on the worker PC.</p>
+<p>Account settings belong only to that one source. Other sources remain signed out unless you separately enable account use for them.</p>
+</section>
+
+<section><h2>Opening the actual YouTube login screen</h2><p>Choose the worker and browser, then press <b>Open YouTube login window on selected worker</b>. VIC opens the normal Google/YouTube sign-in page on that PC. Log in there, return to VIC, choose Automatic browser fallback or Always use browser login, and press Test.</p><p>VIC does not display an embedded password box and never receives your password. Account cookies are used only by sources where you enable them.</p></section>
+</body></html>

@@ -1,0 +1,14 @@
+{
+  "dashboard_url": "http://127.0.0.1:8765",
+  "cluster_token": "c6BJxP-slFdA218d27FgPSKch79CDrcT",
+  "worker_id": "",
+  "worker_name": "",
+  "poll_seconds": 0.25,
+  "recordings_dir": "worker_recordings",
+  "ffmpeg_path": "",
+  "full_status_seconds": 10,
+  "auto_discover": true,
+  "dashboard_port": 8765,
+  "discovery_port": 8766,
+  "worker_machine": ""
+}

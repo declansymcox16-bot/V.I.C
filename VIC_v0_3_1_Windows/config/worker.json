@@ -1,0 +1,9 @@
+{
+  "dashboard_url": "http://127.0.0.1:8765",
+  "cluster_token": "c6BJxP-slFdA218d27FgPSKch79CDrcT",
+  "worker_id": "",
+  "worker_name": "",
+  "poll_seconds": 2,
+  "recordings_dir": "worker_recordings",
+  "ffmpeg_path": ""
+}

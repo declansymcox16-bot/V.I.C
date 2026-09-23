@@ -1,0 +1,15 @@
+{
+  "port": 8765,
+  "cluster_token": "c6BJxP-slFdA218d27FgPSKch79CDrcT",
+  "worker_offline_seconds": 12,
+  "open_browser_on_start": false,
+  "discovery_port": 8766,
+  "audio_meter_refresh_preset": "fast",
+  "audio_meter_refresh_seconds": 0.2,
+  "audio_meter_smoothing": true,
+  "preview_refresh_preset": "mid",
+  "preview_refresh_seconds": 0.5,
+  "preview_quality": "balanced",
+  "preview_width": 640,
+  "preview_jpeg_quality": 7
+}

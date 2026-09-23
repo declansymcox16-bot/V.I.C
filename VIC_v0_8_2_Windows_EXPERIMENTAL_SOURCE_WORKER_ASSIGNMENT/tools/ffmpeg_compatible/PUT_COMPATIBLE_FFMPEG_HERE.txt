@@ -1,0 +1,14 @@
+VIC COMPATIBLE FFMPEG FOLDER
+
+Use this when you want to keep an older NVIDIA/AMD/Intel driver.
+
+Place complete FFmpeg builds in separate folders. Example:
+
+tools\ffmpeg_compatible\ffmpeg-7-compatible\bin\ffmpeg.exe
+tools\ffmpeg_compatible\ffmpeg-6-compatible\bin\ffmpeg.exe
+
+VIC scans this folder recursively. In Automatic compatible mode it tests every
+FFmpeg copy and chooses the newest one whose hardware encoder actually works
+with this PC current driver. It remembers the selected path per worker.
+
+Do not mix DLL files from different FFmpeg builds in the same folder.

@@ -1,0 +1,5 @@
+{
+  "dashboard_url": "http://127.0.0.1:8765",
+  "worker_name": "",
+  "poll_seconds": 3
+}

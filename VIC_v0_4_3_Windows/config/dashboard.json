@@ -1,0 +1,7 @@
+{
+  "port": 8765,
+  "cluster_token": "c6BJxP-slFdA218d27FgPSKch79CDrcT",
+  "worker_offline_seconds": 12,
+  "open_browser_on_start": false,
+  "discovery_port": 8766
+}

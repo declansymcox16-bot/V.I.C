@@ -1,0 +1,130 @@
+<!doctype html><html><head><meta charset="utf-8"><title>VIC Start Here</title><style>body{font-family:Segoe UI,Arial;max-width:900px;margin:35px auto;line-height:1.55;padding:0 20px}code{background:#eee;padding:2px 5px}</style></head><body>
+<h1>VIC v0.3.1 — Start Here</h1>
+<ol><li>Extract the ZIP into a new folder.</li><li>Double-click <code>START_VIC.bat</code>.</li><li>If packages are missing, the installer opens automatically.</li><li>Install FFmpeg with <code>INSTALL_FFMPEG.bat</code> when required.</li><li>Wait for <b>Local PC (this computer)</b> to appear online.</li></ol>
+<h2>First screen test</h2><ol><li>Add source.</li><li>Choose Desktop, monitor or application window.</li><li>Select <b>Local PC (this computer)</b>.</li><li>Press Load worker devices.</li><li>Choose the whole desktop or one monitor.</li><li>Select optional loopback audio.</li><li>Save, Test and Start.</li><li>Open the Live tab in a separate browser tab.</li></ol>
+<h2>Find files</h2><p>Open the <b>Recordings</b> tab. It shows the recording path reported by each worker.</p>
+
+<section><h2>Screen audio dropdown</h2>
+<p>After selecting a worker, press <b>Load worker devices</b>. The screen audio dropdown includes microphones/audio inputs and speaker/headphone outputs. Microphones are added to the screen MKV. Speaker loopback is stored as a matching companion WAV file beside the screen recording and drives the live volume meter.</p></section>
+<section><h2>Shared speaker piggybacking</h2><p>VIC opens each speaker or headphone output once and shares that audio with all screen sources, standalone speaker recordings, live meters and mass-capture jobs using it. This lets several VIC sources piggyback on audio that is already playing without fighting each other for the Windows device.</p><p>If Windows still reports 0x8889000A when no other VIC speaker source is running, another application is holding the device in exclusive mode.</p></section>
+<section>
+<h2>Test All, Start All and Stop All</h2>
+<p>The Dashboard has three bulk buttons. Test All sends a short test to every source, Start All starts all inactive sources, and Stop All stops every active test or recording.</p>
+<h2>Physical monitor size</h2>
+<p>VIC now asks Windows for the active physical signal mode instead of the DPI-scaled desktop size. A 4096×2160 display at 150% scaling should therefore be listed and captured as 4096×2160.</p>
+</section>
+
+<section>
+<h2>Faster meters and Live All</h2>
+<p>Audio levels now report about four times per second while a worker is online. The Dashboard has a larger Audio level column. Open <b>Live All</b> to see all latest source previews, states and audio meters together. Individual Live pages remain available.</p>
+</section>
+
+<section>
+<h2>Live All control room</h2>
+<p>Live All now has Test All, Start All and Stop All beside Full screen. Every card has its own Test, Start and Stop buttons. A pulsing green corner dot means recording, amber means testing or changing state, red means failed, and grey means inactive. The green border glow makes active recordings easy to spot.</p>
+</section>
+
+<section>
+<h2>Cleanup and website sources</h2>
+<p>VIC v0.3.8 adds safe history cleanup throughout the Dashboard, Live, Live All, Jobs and Workers pages. Recording-file deletion is separated and clearly marked as permanent. Website sources now support a single page, a playlist, or an upcoming scheduled livestream.</p>
+</section>
+
+<section>
+<h2>Editing and optional website login</h2>
+<p>Use Edit beside a source to change its name, worker and capture settings. Website sources can remain signed out, always use a selected browser/cookies file, or automatically retry with account access only after a login, age-verification or private-content error.</p>
+</section>
+
+<section><h2>v0.4.0 connection and reliability</h2><p>Second PCs can now find the main Dashboard automatically. Run <code>START_WORKER.bat</code>; use <code>SETUP_WORKER_GUI.bat</code> only as a fallback. <code>STOP_VIC.bat</code> now tracks process IDs, stops process trees and verifies the result.</p><p>The Edit-page Internal Server Error has been repaired. Future Dashboard errors are recorded in <code>logs\dashboard_error.log</code>.</p></section>
+
+<section>
+<h2>v0.4.4 traceback fixes</h2>
+<p>The Edit page no longer conflicts with Flask's internal <code>source</code> parameter, and mass-transfer version checking now imports Python's <code>re</code> module correctly. Run <code>TEST_DASHBOARD_FIXES.bat</code> for a safe test using temporary data.</p>
+</section>
+<section><h2>v0.4.7 GPU detection fix</h2><p>Corrects false CPU fallback caused by double-escaped encoder-list regular expressions. The real encoder runtime test is now authoritative.</p></section>
+<section>
+<h2>v0.5.0 faster parallel transfers</h2>
+<p>Workers now move up to three files at once by default. Worker Setup allows 1-6 simultaneous transfers. Transfer chunks are 4 MB, progress reporting is non-blocking, and the Recordings queue updates every 250 milliseconds with live speed and ETA.</p>
+</section>
+
+<section>
+<h2>v0.5.1 Retry All and 12 parallel slots</h2>
+<p>The transfer queue includes <b>Retry All Failed / Stuck</b>. It retries failed items and progress that has been stale for 30 seconds while leaving healthy active transfers alone. Worker Setup now offers 1-12 simultaneous transfers per worker; 4 is the fresh-install default.</p>
+</section>
+
+<section><h2>v0.6.0 Experimental portable safety bundle</h2><p>This separate-folder release adds source enable/archive/favourites, source import/export, automatic post-record movement, storage tests, protected recordings, a restorable VIC recycle bin, portable config backups, worker-copy ZIPs and an embedded v0.5.1 rollback package.</p><p>Run <code>ROLLBACK_TO_V0_5_1.bat</code> after stopping VIC to extract the previous working release beside this folder.</p></section>
+
+<section>
+<h2>v0.6.1 worker connection repair</h2>
+<p>v0.6.0 rejected worker heartbeats because Windows raised <code>OSError 9: Bad file descriptor</code> while syncing a read-only temporary JSON file. v0.6.1 keeps the writable handle open during flush/fsync, atomically replaces the JSON and avoids backup churn for volatile worker, job and transfer files.</p>
+</section>
+
+<section>
+<h2>v0.6.2 live display settings</h2>
+<p>The Settings tab controls audio-meter refresh, smoothing, live preview refresh and preview quality. Refresh values accept 0.00 to 10.00 seconds. Preview has no duration limit and runs until Stop or Start Recording.</p>
+</section>
+
+<section>
+<h2>v0.6.3 source form and export repair</h2>
+<p>Add Source and Edit Source no longer crash when live audio settings are rendered. Export is available per source as <b>Export Source</b>, and Source Library includes <b>Export All Sources ZIP</b>.</p>
+</section>
+
+<section>
+<h2>v0.6.4 responsive audio and 4K previews</h2>
+<p>Silence now falls back to zero instead of holding the previous peak. Audio movement can be Raw, Light, Medium or Heavy; Light is the responsive default. Preview presets now range from 160 px to 4K UHD, with custom width up to 4096 px.</p>
+</section>
+
+<section>
+<h2>v0.6.5 source import repair</h2>
+<p>Import Source / ZIP now accepts a single portable source, the complete Export All ZIP, a raw sources.json list, or a VIC config backup ZIP. Select the original ZIP directly rather than manifest.json.</p>
+</section>
+
+<section>
+<h2>v0.6.6 fullscreen and dashboard-wide zoom</h2>
+<p>A fixed display bar appears on every page with Fullscreen, zoom out, a 40%-200% slider, zoom in and Default 100%. Hold Ctrl and use the mouse wheel anywhere, or roll the wheel directly over the slider. The selected size is remembered between VIC pages and synchronised with other browser tabs.</p>
+</section>
+
+<section>
+<h2>v0.6.7 Live All zoom reflow</h2>
+<p>At 100%, Live All keeps its familiar layout. Below 100%, the page uses the previously empty side space and automatically adds more source cards across each row. At 40%, the grid has 250% pre-zoom layout width before being scaled to the physical screen.</p>
+</section>
+
+<section>
+<h2>v0.6.8 Live All proportional scaling repair</h2>
+<p>Live All now uses a dedicated transform viewport instead of combining CSS zoom with a stretched page. Cards remain proportional, extra columns appear as zoom decreases, and the wrapper height follows the actual scaled content.</p>
+</section>
+
+<section>
+<h2>v0.6.9 Source Library bulk controls</h2>
+<p>Enable All enables every non-archived source. Disable All disables every inactive source and safely skips sources that are currently testing, previewing or recording. Both controls ask for confirmation and never delete source settings.</p>
+</section>
+
+<section>
+<h2>v0.7.0 Arm Auto Start</h2>
+<p>Arm Auto Start waits for an offline RTSP, network or single/upcoming website stream. It uses bounded availability probes, creates no empty recording, and switches into real recording only after media is detected. Manual Start failures can also retry independently from reconnecting an already-running recording.</p>
+</section>
+
+<section>
+<h2>v0.7.1 current size and actual disk write rate</h2>
+<p>Recording Health now measures the real current recording size and actual file-growth rate. The rate appears in both bits and bytes per second, such as <b>18.56 Mb/s · 2.21 MB/s</b>. Twitch and website temporary files are included while older recordings are excluded.</p>
+</section>
+<section><h2>v0.8.0 capture and storage manager</h2><p>Website Finish Capture closes VIC's downloader and finalises .part files without stopping the website broadcast. Active preview delivery quality can be changed globally or per Live All card. Advanced Storage Manager adds named worker paths, drive inventory, benchmarks, source recording targets and safe segment rollover.</p></section>
+<section>
+<h2>v0.8.1 second-PC worker setup repair</h2>
+<p>Worker Setup now checks Pillow and every other dependency, can import an old worker.json, displays the cluster token field, and tests the Dashboard address and token separately. Use REPAIR_AND_SETUP_WORKER.bat on the second PC.</p>
+</section>
+
+<section>
+<h2>v0.8.2 assign workers after importing sources</h2>
+<p>Source Library now has a bulk worker assignment section and a quick worker dropdown on every source row. Imported sources remain disabled until tested. Active sources are skipped, and incompatible saved storage selections are cleared safely.</p>
+</section>
+
+<section>
+<h2>v0.8.3 Twitch and YouTube playlist routing repair</h2>
+<p>Normal Twitch and YouTube webpage URLs are now always resolved through yt-dlp, even when an older imported source was saved as a direct network stream. Auto Detect records every item when a YouTube URL contains a playlist, while direct .m3u8/.mpd URLs remain FFmpeg streams.</p>
+</section>
+
+<section>
+<h2>v0.8.4 application-window picker and setup audio meters</h2>
+<p>Application-window capture can now load, search and select every visible titled window on the selected worker. Camera audio, microphone/input and speaker/headphone source forms now include live setup meters with Start and Stop controls.</p>
+</section>
+</body></html>
