@@ -1,14 +1,16 @@
 # VIC — Video Ingest Cluster
 
-**Process Anywhere. Capture Anywhere. Record Everything.**
+**My Dream Is Now Your Dream.**
 
 VIC is a portable Windows capture and recording system designed to control multiple PCs from one central dashboard. It can discover, preview, record and manage applications, windows, monitors, microphones, application audio, speakers/headphones, cameras, capture cards, RTSP/IP cameras, network streams and supported livestreams across a LAN.
 
 Unlike a traditional recorder that mixes everything into one scene, VIC is built around **independent sources and independent recordings**. A game, Discord, several monitors, cameras and audio sources can all be recorded separately while still being controlled from one place.
 
+**Process Anywhere. Capture Anywhere. Record Everything.**
+
 Created by and credited to **Declan Allan Dykes**.
 
-## Downloads and versions
+## Downloads
 
 | Version | What it is | Source |
 | --- | --- | --- |
@@ -23,27 +25,18 @@ Created by and credited to **Declan Allan Dykes**.
 | v0.8.0 | Capture finishing and advanced storage manager | [Open version](VIC_v0_8_0_Windows_EXPERIMENTAL_CAPTURE_STORAGE_MANAGER/) |
 | v0.7.1 | Live recording file-size and disk-write-rate monitoring | [Open version](VIC_v0_7_1_Windows_EXPERIMENTAL_LIVE_DISK_RATE/) |
 
-The repository keeps the historical VIC source versions as separate folders so older builds remain available for comparison and rollback.
+The complete historical VIC source is kept in the repository as separate version folders so older builds remain available for comparison and rollback.
 
 ## Quick start
 
-### Main PC
-
-1. Open the folder for the VIC version you want to run.
-2. Run `INSTALL_VIC.bat` once.
+1. Open the folder for the VIC version you want to run. For the newest build, start with **v0.9.0**.
+2. On the main Windows PC, run `INSTALL_VIC.bat` once when that version includes it.
 3. Run `START_VIC.bat`.
-4. Open the VIC Dashboard in your browser.
-5. Add or import sources and assign their capture/processing workers.
+4. On each secondary PC, copy the same VIC version, configure the worker, then run `START_WORKER.bat`.
+5. Confirm each worker shows **ONLINE** in the Dashboard.
+6. Add or import your sources and choose their capture and processing workers.
 
-### Additional worker PCs
-
-1. Copy the **same VIC version** to the second, third or other worker PC.
-2. Use `SETUP_WORKER_GUI.bat` or the version-specific worker setup/repair tool.
-3. Point the worker at the Main VIC Dashboard.
-4. Run `START_WORKER.bat`.
-5. Confirm the worker shows **ONLINE** in the Dashboard.
-
-For features that depend on worker-side capture, audio, storage or processing, keep the Main Dashboard and workers on the same VIC version.
+For features that depend on worker-side capture, audio, storage or live processing, keep the Main Dashboard and workers on the same VIC version.
 
 ## What VIC can capture
 
@@ -71,7 +64,7 @@ VIC can keep audio in several ways:
 
 The third option gives you a normal playable video **and** separate audio files for editing or backup.
 
-If a merge fails, VIC keeps the original files rather than deleting the only copy.
+If an audio merge fails, VIC keeps the original files rather than deleting the only copy.
 
 ## Distributed workers
 
@@ -92,7 +85,7 @@ The **processing worker** can be:
 - Another specific VIC worker
 - Automatically selected from available workers
 
-Distributed live processing is designed to move the heavier recording/processing work away from the machine where the source exists when appropriate.
+Distributed live processing is designed to move the heavier recording and processing work away from the machine where the source exists when appropriate.
 
 Actual capacity depends on CPU, GPU, storage and network bandwidth. VIC does not make hardware capacity unlimited.
 
@@ -103,7 +96,7 @@ VIC includes central controls for:
 - Start / stop recording
 - Graceful website **Finish Capture**
 - Arm and wait for offline livestreams
-- Live previews and Live All
+- Live previews and **Live All**
 - Per-source preview quality
 - Current recording file size
 - Actual recording-file write rate
@@ -132,13 +125,7 @@ VIC avoids moving a file while that file is still open for recording.
 
 VIC is designed around folders, JSON configuration and BAT launchers rather than requiring a database server or permanently installed service.
 
-That makes it easier to:
-
-- Move a VIC installation
-- Keep rollback versions
-- Copy a worker installation to another PC
-- Back up configuration
-- Inspect the actual files being used
+That makes it easier to move a VIC installation, keep rollback versions, copy workers to other PCs and inspect the actual files being used.
 
 ## Privacy and safety
 
@@ -160,21 +147,7 @@ VIC_v0_8_6_Windows_EXPERIMENTAL_WINDOWS10_PROCESS_AUDIO/
 ...
 ```
 
-Typical version folders contain:
-
-```text
-dashboard/
-worker/
-tools/
-config/
-help/
-START_VIC.bat
-START_WORKER.bat
-STOP_VIC.bat
-INSTALL_VIC.bat
-README_FIRST.txt
-requirements.txt
-```
+Typical version folders contain the Dashboard, worker, tools, config templates, help files, BAT launchers, tests and version-specific README files.
 
 Generated recordings, logs, caches and nested rollback ZIP archives are intentionally not kept in the Git source archive.
 
